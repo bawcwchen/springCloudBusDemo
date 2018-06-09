@@ -1,0 +1,21 @@
+
+server:
+    port: 8888
+
+spring:
+    application:
+                 name: config-server
+    cloud:
+         config:
+               server:
+                      git:
+                           uri: https://github.com/bawcwchen/config/
+                           searchPaths: app1,app2
+               label: master
+eureka:
+    instance:
+       hostname: localhost
+    client:
+         serviceUrl:
+             defaultZone: http://localhost:8889/eureka/
+
